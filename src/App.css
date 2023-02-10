@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.content main {
+    min-height: 70vh
+}
+
+.content aside {
+    flex: 1;
+}
+
+.col {
+    flex: 6;
+}
+
+
+header,
+footer {
+    background: rgb(1, 1, 153);
+    color: white;
+    font-size: 2rem;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1% 0 1%
+}

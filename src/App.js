@@ -1,22 +1,27 @@
-import React, { useEffect, useState }   from 'react';
-import { BASE_URL } from './api';
+import React from 'react';
+import { Header, Posts, Search, PostForm, Footer} from './components';
+import './App.css'
 
-const App = () => {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(BASE_URL);
-    }
-    fetchPosts();
-  }, []);
-
-
-  return <>
-  <h1>
-    Posts
-  </h1>
-    </>
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <div className="content">
+        <div className="col">
+          <main>
+            <Posts />
+            <Search />
+          </main>
+        </div>
+        <aside className="col">
+          <PostForm />
+        </aside>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+  )
 }
 
 export default App;
