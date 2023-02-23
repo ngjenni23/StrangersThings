@@ -1,8 +1,9 @@
 import React from 'react';
-import { Header, Posts, Search, PostForm, Footer} from './components';
+import { Header, Posts, Footer} from './components';
 import './App.css'
 
 function App() {
+
   return (
     <div className="container">
       <Header />
@@ -10,12 +11,8 @@ function App() {
         <div className="col">
           <main>
             <Posts />
-            <Search />
           </main>
         </div>
-        <aside className="col">
-          <PostForm />
-        </aside>
       </div>
       <footer>
         <Footer />

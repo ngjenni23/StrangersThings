@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
 }
@@ -9,7 +10,6 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    flex: 5;
     min-height: 100vh;
     margin: 0;
 }
@@ -17,29 +17,77 @@ body {
 .content {
     display: flex;
     flex-direction: row;
-}
-
-.content main {
-    min-height: 70vh
-}
-
-.content aside {
-    flex: 1;
-}
-
-.col {
-    flex: 6;
+    justify-content: center;
+    min-height: 70vh;
 }
 
 
 header,
 footer {
-    background: rgb(1, 1, 153);
+    background: #175676;
     color: white;
-    font-size: 2rem;
+    font-size: 3rem;
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1% 0 1%
+    padding: 3% 1% 3% 1%;
+}
+
+.nav {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color:white;
+    
+}
+
+form {
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+    padding: 15px;
+    color: black;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.active {
+    visibility: inherit;
+}
+
+.title {
+    margin-top: 10px;
+}
+
+.descr {
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+.closeForm,
+.submitForm {
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+
+.postContainer {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 0 10px 5px 10px;
+}
+
+#message input {
+    margin: 10px;
 }

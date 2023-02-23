@@ -1,10 +1,10 @@
 import React from "react";
-import Search from './Search'
+import Navbar from "./Navbar";
 
 const Header = () => {
     return <header>
         Stranger's Things
-        <Search />
+        <Navbar />
         </header>
 };
 
