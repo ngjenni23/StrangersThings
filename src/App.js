@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Header, Home, Profile, LoginRegister, Messages, Register, Login, MyPosts, Footer } from './components';
+import { Header, Search, PostForm, Posts, Messages, Register, Login, MyPosts, Footer } from './components';
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
@@ -12,14 +11,15 @@ function App() {
       <Header />
       <div className="body">
         <div className="posts">
-          <main>
-          <BrowserRouter>
-          <Routes>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Profile" element={<Profile />}/>
-            <Route path="/LoginRegister" element={<LoginRegister />}/>
-          </Routes>
-          </BrowserRouter>
+            <main>
+            <div className="postHeader">
+              <h3>Home</h3>
+              <p><Search /></p>
+          </div>
+          <div>
+              <PostForm setToken={setToken}token={token}/>
+          </div>
+          <Posts token={token}/>
           </main>
         </div>
         <aside>
