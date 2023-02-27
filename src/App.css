@@ -10,59 +10,34 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    flex: 1;
     min-height: 100vh;
     margin: 0;
 }
 
-.content {
+.body {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    min-height: 70vh;
 }
 
+.posts {
+    flex: 6;
+    margin: 0 20px 0 20px;
+}
 
 header,
 footer {
-    background: #175676;
+    background: #041f4b;
     color: white;
     font-size: 3rem;
     height: 10vh;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 3% 1% 3% 1%;
 }
 
-.nav {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color:white;
-    
-}
-
-form {
-    visibility: hidden;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid black;
-    border-radius: 10px;
-    z-index: 10;
-    background-color: white;
-    width: 500px;
-    max-width: 80%;
-    padding: 15px;
-    color: black;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.active {
-    visibility: inherit;
+header {
+    justify-content: center;
 }
 
 .title {
@@ -71,23 +46,41 @@ form {
 
 .descr {
     margin-bottom: 10px;
-    height: 100px;
 }
 
-.closeForm,
-.submitForm {
-    align-self: flex-end;
-    cursor: pointer;
+.postHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
 }
-
 
 .postContainer {
     border: 1px solid black;
     border-radius: 10px;
-    margin: 20px;
     padding: 0 10px 5px 10px;
+    margin-bottom: 10px;
 }
 
-#message input {
-    margin: 10px;
+.postDetails {
+    border-bottom: 1px solid grey;
+}
+
+aside {
+    margin: 0 20px 0 20px;
+    padding: 30px 10px 5px 10px;
+    flex: 3;
+}
+
+.newPost {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0 10px 5px 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
 }

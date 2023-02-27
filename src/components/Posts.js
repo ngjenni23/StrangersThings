@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { BASE_URL } from "../api";
-import PostForm from "./PostForm";
-import Search from "./Search";
-import { showMessageForm, closeMessageForm } from "./renderHelpers";
+import MessageForm from "./MessageForm";
+import DeletePost from "./DeletePost";
 
-const Posts = () => {
+const Posts = ({token, setToken}) => {
     const [posts, setPosts] = useState([]);
+    
+
+    const handleDelete = async (token, id) => {
+        await DeletePost(token, id)
+    }
     console.log("posts:", posts)
 
     useEffect(() => {
@@ -16,27 +20,22 @@ const Posts = () => {
         }
         fetchPosts();
     }, [])
-    return <>
-    <h3>
-        Posts
-        <Search />
-        <PostForm />
-    </h3>
-    {
-        posts.map(post =>
+    return posts.map(post =>
         <div className="postContainer" 
             key={post.id} >
-            <h3>{post.title}</h3>
-            <p>{post.description}</p>
-            <button onClick={showMessageForm}>Message</button>
-            <form id="message">
-                <button className="closeForm" onClick={closeMessageForm}>&times;</button>
-                <input type="text"></input>
-                <button type="submit" className="submitForm">Send</button>
-            </form>
+            <div className="postDetails">
+                <h3>{post.title} from {post.author.username}</h3>
+                <h4>Price: {post.price}</h4>
+                <p>{post.description}</p>
+                <p>Location: {post.location}</p>
+                <p>{post.willDeliver ? "Delivery Available" : "No Delivery"}</p>
+            </div>
+            <div className="message">
+            <h4> Message {post.author.username}</h4>
+            <MessageForm token={token} postID={post._id}/>
+            <button onClick={(event) => DeletePost(token, post._id)}>Delete</button>
+            </div>
         </div>)
-    }
-    </> 
 }
 
 export default Posts;

@@ -1,14 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Navbar = () => {
     return <>
-        <div className="nav">
-            Home
-            Messages
-            My Posts
-            LogIn/Out
-        </div>
+        <Link to="/Home">Home</Link>
+        <Link to="/Profile">Profile</Link>
+        <Link to="/LoginRegister">Login or Register</Link>
     </>
 }
 
-export default Navbar;
+export default Navbar
